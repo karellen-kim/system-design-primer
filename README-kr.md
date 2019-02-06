@@ -8,39 +8,39 @@
   <br/>
 </p>
 
-## Motivation
+## 동기
 
-> Learn how to design large-scale systems.
+> 대용량 시스템을 설계하는 방법을 배웁니다.
 >
-> Prep for the system design interview.
+> 시스템 설계 면접을 준비합니다.
 
-### Learn how to design large-scale systems
+### 대용량 시스템을 설계하는 방법
 
-Learning how to design scalable systems will help you become a better engineer.
+확장 가능한 시스템을 설계하는 방법을 배우는 것은 더 좋은 엔지니어가 되는데 도움이 됩니다.
 
-System design is a broad topic.  There is a **vast amount of resources scattered throughout the web** on system design principles.
+시스템 설계는 광범위합니다. 시스템 설계 원리에 대한 **방대한 양의 자료가 웹에 흩어져 있습니다.**
 
-This repo is an **organized collection** of resources to help you learn how to build systems at scale.
+이 저장소는 대용량 시스템을 구축하기 위한 방법을 배우기 위해 필요한 **자료들을 정리**한 것입니다.
 
-### Learn from the open source community
+### 오픈 소스 커뮤니티에서 배우는 방법
 
-This is a continually updated, open source project.
+이것은 지속적으로 업데이트되는 오픈 소스 프로젝트입니다.
 
-[Contributions](#contributing) are welcome!
+[Contributions](#contributing) 환영합니다.
 
-### Prep for the system design interview
+### 시스템 설계 면접 준비
 
-In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
+코딩 인터뷰뿐만 아니라, 시스템 설계는 많은 회사에서 기술 면접 과정의 **필수 요소**입니다.
 
-**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
+**시스템 설계 면접 질문을 연습**하고, 당신의 결과물을 **예시 답변**과 비교(토론, 코드, 다이어그램)하세요.
 
-Additional topics for interview prep:
+면접 준비에 필요한 추가 주제 :
 
-* [Study guide](#study-guide)
-* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
-* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
-* [Additional system design interview questions](#additional-system-design-interview-questions)
+* [학습 가이드](#study-guide)
+* [시스템 설계 면접 질문 접근법](#how-to-approach-a-system-design-interview-question)
+* [시스템 설계 면접 질문과, **답변들**](#system-design-interview-questions-with-solutions)
+* [객체 지향 설계 면접 질문과, **답변들**](#object-oriented-design-interview-questions-with-solutions)
+* [추가적인 시스템 설계 면접 질문](#additional-system-design-interview-questions)
 
 ## Anki flashcards
 
@@ -177,31 +177,32 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 * [Contact info](#contact-info)
 * [License](#license)
 
-## Study guide
+## 학습 가이드
 
-> Suggested topics to review based on your interview timeline (short, medium, long).
+> 면접 일정(단기간/중기간/장기간)에 따라 봐야할 주제 제안
 
 ![Imgur](http://i.imgur.com/OfVllex.png)
 
-**Q: For interviews, do I need to know everything here?**
+**Q: 면접을 위해서 여기 있는 모든 것을 알아야 하나요?**
 
-**A: No, you don't need to know everything here to prepare for the interview**.
+**A: 아니요, 면접 준비를 위해 여기에 있는 모든 것을 알 필요는 없습니다.**
 
-What you are asked in an interview depends on variables such as:
+인터뷰에서 질문하는 내용은 다음과 같은 상황에 따라 다릅니다 : 
 
-* How much experience you have
-* What your technical background is
-* What positions you are interviewing for
-* Which companies you are interviewing with
-* Luck
+* 당신이 얼마나 많은 경험을 가지고 있는지
+* 당신의 기술적 배경이 무엇인지
+* 당신이 어떤 포지션을 위해 면접을 받는지
+* 당신이 어떤 회사에 면접을 보는지
+* 운
 
-More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
+경험이 많은 후보자는 일반적으로 시스템 설계에 대해 더 많이 알고 있어야 합니다. 아키텍쳐나 팀 리더는 개별 개발자보다 더 많이 알고 있기를 바랄 것입니다. 일류 기술 회사들은 하나 이상의 설계 면접 절차를 가지는 경우가 많습니다.
 
-Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
+일단 넓게 시작하고 점차 몇 가지 범위로 좁혀가십시오. 시스템 설계 주제에 관한 핵심에 관해 조금씩 알아두는 것은 도움이 됩니다. 당신의 면접 일정, 경험, 면접 포지션, 면접을 볼 회사 등에 따라 다음 가이드를 조정하십시오.
 
-* **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
-* **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
-* **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
+
+* **단기간** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
+* **중기간** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
+* **장기간** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
 
 | | Short | Medium | Long |
 |---|---|---|---|
@@ -213,15 +214,16 @@ Start broad and go deeper in a few areas.  It helps to know a little about vario
 | Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
 | Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
 
-## How to approach a system design interview question
+## 시스템 설계 면접 질문 접근법
 
-> How to tackle a system design interview question.
+> 시스템 설계 면접 질문에 어떻게 대처하는가
 
-The system design interview is an **open-ended conversation**.  You are expected to lead it.
+시스템 설계 인터뷰는 **Yes/No로 답변할 수 없는 논의 과정입니다.** 당신이 대화를 이끌어가야 합니다.
+토론을 이끌어가기 위해 다음 스텝들을 밟아가세요. 이 과정을 강화하기 위해서 [System design interview questions with solutions](#system-design-interview-questions-with-solutions) 섹션을 다음 스텝에 따라 진행해보세요.
 
-You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
 
 ### Step 1: Outline use cases, constraints, and assumptions
+### Step 1: 
 
 Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
 
@@ -366,29 +368,28 @@ Check out the following links to get a better idea of what to expect:
 | Design a circular array | [Contribute](#contributing)  |
 | Add an object-oriented design question | [Contribute](#contributing) |
 
-## System design topics: start here
+## 시스템 설계 주제 : 여기서 시작하세요
 
-New to system design?
+시스템 설계는 처음인가요?
+일단, 일반적인 원리에 대해 그것이 무엇인지, 어떻게 사용하는지, 장단점은 무엇인지, 기본적으로 알아둘 필요가 있습니다. 
 
-First, you'll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
-
-### Step 1: Review the scalability video lecture
+### Step 1: 확장성에 관한 동영상 강의 리뷰 
 
 [Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
-* Topics covered:
-    * Vertical scaling
-    * Horizontal scaling
-    * Caching
-    * Load balancing
-    * Database replication
-    * Database partitioning
+* 다루는 주제 :
+    * 수직적 확장(Vertical scaling)
+    * 수평적 확장(Horizontal scaling)
+    * 캐싱(Caching)
+    * 로드밸런싱(Load balancing)
+    * 데이터베이스 복제(Database replication)
+    * 데이터베이스 분할(Database partitioning)
 
-### Step 2: Review the scalability article
+### Step 2: 확장성에 관한 글 리뷰
 
 [Scalability](http://www.lecloud.net/tagged/scalability/chrono)
 
-* Topics covered:
+* 다루는 주제:
     * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
     * [Databases](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
     * [Caches](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
