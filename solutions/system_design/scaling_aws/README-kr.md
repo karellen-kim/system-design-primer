@@ -1,46 +1,46 @@
-# Design a system that scales to millions of users on AWS
+# 수백만명 사용자까지 허용 가능한 AWS 기반의 시스템 설계
 
-*Note: This document links directly to relevant areas found in the [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) to avoid duplication.  Refer to the linked content for general talking points, tradeoffs, and alternatives.*
+*참고: 이 문서는 중복 방지를 위해서 [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics)에서 확인할 수 있는 영역으로 링크됩니다. 일반적인 논점, 트레이드오프 및 대안에 대해서는 해당 링크를 참고하세요.*
 
-## Step 1: Outline use cases and constraints
+## Step 1: 사용 사례 및 제약조건을 설명하세요
 
-> Gather requirements and scope the problem.
-> Ask questions to clarify use cases and constraints.
-> Discuss assumptions.
+> 요구사항과 문제의 범위를 취합하세요.
+> 사용 사례 및 제약조건을 명확하게 하기 위한 질문을 하세요.
+> 가정에 대해 논의하세요.
 
-Without an interviewer to address clarifying questions, we'll define some use cases and constraints.
+질문을 명확하게 알려줄 면접관이 없다면, 우리는 몇 가지 사용 사례와 제약 조건을 정의할 것입니다.
 
-### Use cases
+### 사용 사례
 
-Solving this problem takes an iterative approach of: 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat, which is good pattern for evolving basic designs to scalable designs.
+이 문제를 풀기 위해서 반복적인 접근법을 사용하세요: 1) **벤치마크/부하테스트**, 2) **병목지점** 찾기 3) 대안법과 트레이드를 평가하면서 병목 해결 4) 반복, 이것은 기본 디자인을 확장 가능한 디자인으로 발전시키는 좋은 패턴입니다.
 
-Unless you have a background in AWS or are applying for a position that requires AWS knowledge, AWS-specific details are not a requirement.  However, **much of the principles discussed in this exercise can apply more generally outside of the AWS ecosystem.**
+당신이 AWS에 배경지식을 가지고 있거나 AWS 관련 지식이 필요한 업무에 지원하는 것이 아니라면, AWS에 대한 자세한 내용을 알 필요는 없다. 하지만, **이 예제에서 논의된 많은 원칙들은 AWS 생태계 밖에서 더 일반적으로 적용될 수 있다.**
 
-#### We'll scope the problem to handle only the following use cases
+#### 우리는 다음 사용 사례만을 다루도록 문제를 살펴볼 것입니다
 
-* **User** makes a read or write request
-    * **Service** does processing, stores user data, then returns the results
-* **Service** needs to evolve from serving a small amount of users to millions of users
-    * Discuss general scaling patterns as we evolve an architecture to handle a large number of users and requests
-* **Service** has high availability
+* **사용자** 읽기/쓰기 요청을 한다
+    * **서비스** 처리하고, 사용자의 데이터를 저장하며 결과를 반환합니다.
+* **서비스** 적은 사용자에서 수백만명의 사용자를 서비스 가능하도록 발전이 필요합니다/
+    * 우리가 많은 유저와 요청을 처리할 아키텍처로 발전해야 할 때, 일반적인 확장 패턴들에 대해 논의하세요.
+* **서비스** 높은 가용성을 가지고 있습니다.
 
-### Constraints and assumptions
+### 제약조건과 가정
 
-#### State assumptions
+#### 가정 상황
 
-* Traffic is not evenly distributed
-* Need for relational data
-* Scale from 1 user to tens of millions of users
-    * Denote increase of users as:
-        * Users+
-        * Users++
-        * Users+++
+* 트래픽은 균등하게 분산되지 않습니다.
+* 관계형 데이터가 필요합니다.
+* 한명의 사용자에서 수천만명의 사용자까지 확대되었습니다.
+    * 사용자의 증가를 다음과 같이 표현합니다 :
+        * 사용자+
+        * 사용자++
+        * 사용자+++
         * ...
-    * 10 million users
-    * 1 billion writes per month
-    * 100 billion reads per month
-    * 100:1 read to write ratio
-    * 1 KB content per write
+    * 사용자 1000만명 
+    * 월 10억건의 쓰기 연산
+    * 월 100억건의 읽기 연산
+    * 100:1의 읽기대 쓰기 비율
+    * 한번의 쓰기당 1KB의 컨텐츠
 
 #### Calculate usage
 

@@ -223,7 +223,6 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 
 
 ### Step 1: Outline use cases, constraints, and assumptions
-### Step 1: 
 
 Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
 
@@ -395,25 +394,26 @@ Check out the following links to get a better idea of what to expect:
     * [Caches](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
     * [Asynchronism](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
-### Next steps
+### 다음 Step
 
-Next, we'll look at high-level trade-offs:
+다음으로, 우리는 높은 수준의 trade-off를 살펴볼 것입니다 :
 
-* **Performance** vs **scalability**
-* **Latency** vs **throughput**
-* **Availability** vs **consistency**
+* **성능(Performance)** vs **확장성(scalability)**
+* **지연(Latency)** vs **처리량(throughput)**
+* **가용성(Availability)** vs **일관성(consistency)**
 
-Keep in mind that **everything is a trade-off**.
+모든 것은 trade-off임을 명심하세요.
 
-Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
+그런 다음 우리는 DNS, CDN, 로드 밸런서와 같은 좀 더 구체적인 주제에 관해 알아보겠습니다.
 
-## Performance vs scalability
+## 성능(Performance) vs 확장성(scalability)
 
-A service is **scalable** if it results in increased **performance** in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+서비스는 추가된 자원에 비례하여 **성능**이 향상되면 **확장** 가능합니다. 일반적으로 성능 향상은 더 많은 작업 단위를 처리할 수 있음을 의미하지만, 데이터집합이 커지는 것과 같이 더 큰 작업 단위를 처리할 수도 있습니다.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
-Another way to look at performance vs scalability:
+성능 vs 확장성을 비교하는 다른 방법은 다음과 같습니다:
 
 * If you have a **performance** problem, your system is slow for a single user.
+* 만약 **성능** 문제가 발생한다면, 
 * If you have a **scalability** problem, your system is fast for a single user but slow under heavy load.
 
 ### Source(s) and further reading
@@ -421,7 +421,7 @@ Another way to look at performance vs scalability:
 * [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 
-## Latency vs throughput
+## 지연(Latency) vs 처리량(throughput)
 
 **Latency** is the time to perform some action or to produce some result.
 
@@ -433,7 +433,7 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
 
 * [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
 
-## Availability vs consistency
+## 가용성(Availability) vs 일관성(consistency)
 
 ### CAP theorem
 
